@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
 import psycopg2
 
+#The most popular three articles of all time
 query_articles = ("""create view pop1_articles as select title,
                     count(title) as views from articles,
                     log where log.path = concat('/article/',articles.slug)
                     group by title order by views desc limit 3""")
+#The most popular three article authors of all time
 query_authors = ("""create view pop1_authors as select name,
                     count(name) as views from articles,authors,
                     log where log.path = concat('/article/',articles.slug)
                     and articles.author=authors.id group by name order by
                     views desc limit 3""")
+#On which days did more than 1% of requests lead to errors
 query_errors = ("""create view pop_errors as select date(time),
                     round(100.0*sum(case log.status when '200 OK'
                     then 0 else 1 end)/count(log.status),2)as percent_error
