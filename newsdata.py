@@ -18,7 +18,7 @@ query_errors = ("""create view pop_errors as select date(time),
                     then 0 else 1 end)/count(log.status),2)as percent_error
                     from log group by date(time) order by percent_error""")
 
-
+#def for popula articles
 def popular_articles_inDB(query_articles):
     db = psycopg2.connect(dbname="new")
     cur = db.cursor()
