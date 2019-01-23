@@ -11,6 +11,9 @@
 	2. Download or Clone fullstack-nanodegree-vm repository.
 	3. Copy the newsdata.sql file and content of this current repository, by downloading.
 	
+	## https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip ##
+
+	
 
 ## C. Launching the Virtual Machine: ##
 	1. To run the Vagrant VM in Vagrant sub-directory in the downloaded fullstack-nanodegree-vm repository using command:
