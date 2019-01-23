@@ -20,7 +20,7 @@ query_errors = ("""create view pop_errors as select date(time),
 
 #def for popular articles
 def popular_articles_inDB(query_articles):
-    db = psycopg2.connect(dbname="new")
+    db = psycopg2.connect(dbname="news")
     cur = db.cursor()
     # cur.execute(query_articles)
     cur.execute("select* from pop1_articles")
@@ -33,7 +33,7 @@ def popular_articles_inDB(query_articles):
 
 #def for popular articles authors
 def popular_authors_inDB(query_authors):
-    db = psycopg2.connect(dbname="new")
+    db = psycopg2.connect(dbname="news")
     cur = db.cursor()
     # cur.execute(query_authors)
     cur.execute("select* from pop1_authors")
@@ -46,7 +46,7 @@ def popular_authors_inDB(query_authors):
 
 #def for errors more than 1%
 def error_percent_inDB(query_errors):
-    db = psycopg2.connect(dbname="new")
+    db = psycopg2.connect(dbname="news")
     cur = db.cursor()
     # cur.execute(query_errors)
     cur.execute("""select date,percent_error
